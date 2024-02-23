@@ -5,10 +5,18 @@ import ShoppingList from "./components/ShoppingForm";
 
 function App() {
   const [shoppingListItem, setShoppingListItem] = useState("");
-  const shoppingListItems = (text) => {
-    setShoppingListItem(text);
+
+  const generateList = (listItems) => {
+    setShoppingListItem(listItems);
   };
-  return <></>;
+
+  return (
+    <>
+      <h1>Grovery List</h1>
+      <ShoppingForm generateList={generateList} />
+      <ShoppingList items={shoppingListItem} />
+    </>
+  );
 }
 
 export default App;
